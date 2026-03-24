@@ -4,7 +4,7 @@
 ## Anggota Kelompok
 | Nama           | NRP        | Kelas     |
 | ---            | ---        | ----------|
-|                |            |           |
+| Fathiya Nayla Husna Wibowo                | 5025241204           |           |
 |                |            |           |
 
 ## Link Youtube (Unlisted)
