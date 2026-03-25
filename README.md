@@ -47,7 +47,7 @@ This server uses threading, so each client runs in its own thread. That means mu
 4. On upload handling, it reads header (`FILE name size`), then receives file in chunks and saves it.
 5. On download handling, checks file then sends header then sends file using `sendall()`.
 
-#### E. `client.py`
+#### E. [client.py](https://github.com/nafkhanzam-classrooms/g01-tcp-file-server-besok-aja/blob/main/client.py)
 1. The client connects to the server using a host and port. If it gets disconnected, it will automatically try to reconnect.
 2. A separate thread (`receive()`) keeps listening for incoming data. If it sees a `FILE` header, it downloads and saves the file. Otherwise, it treats it as a normal message from the server
 3. The user can type messages `/upload <file>` to upload a file to the server but also other
