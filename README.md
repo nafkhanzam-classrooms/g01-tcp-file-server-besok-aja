@@ -18,14 +18,14 @@ Link ditaruh di bawah ini
 
 The program will be provided on different file, I will explain step by step how the program works:
 
-#### A. `server-sync.py`
+#### A. [server-sync.py](https://github.com/nafkhanzam-classrooms/g01-tcp-file-server-besok-aja/blob/main/server-sync.py)
 This server is fully synchronous, it handles one client at a time. It accepts a connection, processes everything for that client, then moves to the next one.
 1. When a client connects, `handle_client()` runs in a loop. It keeps reading commands until the client disconnects.
 2. The server supports `/list` to send list of files, `/upload` to receive and save file, `/download` to send file, and reply "unknown command" for other.
 3. On upload handling, it reads header (`FILE name size`), then receives file in chunks and saves it.
 4. On download handling, checks file then sends header then sends file using `sendall()`.
 
-#### B. `server-select.py`
+#### B. [server-select.py](https://github.com/nafkhanzam-classrooms/g01-tcp-file-server-besok-aja/blob/main/server-select.py)
 This server uses `select()` to handle multiple clients in one loop.
 1. All sockets are stored in a list, and `select()` tells which ones are ready.
 2. If the server socket is ready, it means a new client is connecting. The server accepts it and adds it to the `sockets` list.
@@ -33,14 +33,14 @@ This server uses `select()` to handle multiple clients in one loop.
 4. On upload handling, it reads header (`FILE name size`), then receives file in chunks and saves it.
 5. On download handling, checks file then sends header then sends file using `sendall()`.
 
-#### C. `server-poll.py`
+#### C. [server-poll.py](https://github.com/nafkhanzam-classrooms/g01-tcp-file-server-besok-aja/blob/main/server-poll.py)
 1. The server uses `poll()` to watch all connections instead of `select()`. Each socket is tracked using its file descriptor (`fd_map`). When something happens, `poll()` tells the server which socket to handle.
 2. If the server socket is triggered, it means a new client is connecting. The server accepts it, registers it to `poll()`, and stores it in `fd_map`.
 3. The server supports `/list` to send list of files, `/upload` to receive and save file, `/download` to send file, and broadcast message to other clients for other.
 4. On upload handling, it reads header (`FILE name size`), then receives file in chunks and saves it.
 5. On download handling, checks file then sends header then sends file using `sendall()`.
 
-#### D. `server-thread.py`
+#### D. [server-thread.py](https://github.com/nafkhanzam-classrooms/g01-tcp-file-server-besok-aja/blob/main/server-thread.py)
 This server uses threading, so each client runs in its own thread. That means multiple clients can connect and be handled at the same time.
 1. When a client connects, it gets added to a `clients` list. Each client is handled in `handle_client()` running in a separate thread.
 2. The server supports `/list` to send list of files, `/upload` to receive and save file, `/download` to send file, and broadcast message to other clients for other.
