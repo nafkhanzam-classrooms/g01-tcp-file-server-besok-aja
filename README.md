@@ -65,3 +65,18 @@ I'm using W2 assignment to run the program, 4 different terminals will be provid
 
 ## Screenshot Hasil
 
+### 1. server-sync.py
+
+<img width="1648" height="472" alt="image" src="https://github.com/user-attachments/assets/fd4b9b85-298a-46ed-a6e5-6ca0d48f4171" />
+
+### 2. server-thread.py
+
+<img width="1408" height="515" alt="image" src="https://github.com/user-attachments/assets/a5d88a6c-d638-4d28-83fe-5207a537de09" />
+
+### 3. server-select.py
+
+<img width="1403" height="498" alt="image" src="https://github.com/user-attachments/assets/22b56683-f434-4fe7-a7b6-3e26bb365215" />
+
+### 4. server-poll.py
+
+<img width="1397" height="498" alt="image" src="https://github.com/user-attachments/assets/8eacf798-d1d1-4b2d-95df-a17d3064ef47" />
